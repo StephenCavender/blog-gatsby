@@ -6,7 +6,9 @@ module.exports = {
     title: `dev.cavender.io`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-mdx", {
+  plugins: [
+    'gatsby-plugin-postcss',
+    "gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
