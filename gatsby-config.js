@@ -11,7 +11,17 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-postcss',
-    "gatsby-plugin-mdx",
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [{
+          resolve: 'gatsby-remark-images',
+          options: {
+            maxWidth: 800,
+          }
+        }]
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
