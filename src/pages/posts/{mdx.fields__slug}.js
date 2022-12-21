@@ -32,8 +32,8 @@ const Post = ({ data: { mdx }, children }) => {
 }
 
 export const query = graphql`
-  query ($id: String) {
-    mdx(id: { eq: $id }) {
+  query ($slug: String) {
+    mdx(fields: { slug: { eq: $slug } }) {
       fields {
         slug
       }
