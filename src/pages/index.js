@@ -77,7 +77,7 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         fields {
           slug
