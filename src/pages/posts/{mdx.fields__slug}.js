@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import PrismSyntaxHighlight from '../../components/prism-syntax-highlight'
+import { SEO } from '../../components/seo'
 
 const components = {
   code: ({ children, className }) => {
@@ -17,9 +18,10 @@ const components = {
 }
 
 const Post = ({ data: { mdx }, children }) => {
-  let featuredImg = getImage(
+  const featuredImg = getImage(
     mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
+
   return (
     <MDXProvider components={components}>
       <GatsbyImage image={featuredImg} className="w-8" />
@@ -32,6 +34,10 @@ const Post = ({ data: { mdx }, children }) => {
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
+      fields {
+        slug
+      }
+      excerpt
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
@@ -49,3 +55,19 @@ export const query = graphql`
 `
 
 export default Post
+
+export const Head = ({ data: { mdx } }) => {
+  const featuredImg = getImage(
+    mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
+  )
+
+  return (
+    <SEO
+      title={mdx.frontmatter.title}
+      description={mdx.excerpt}
+      pathname={mdx.fields.slug}
+      image={featuredImg}
+      tags={mdx.frontmatter.tags}
+    />
+  )
+}

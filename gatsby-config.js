@@ -1,10 +1,13 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `dev.cavender.io`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: 'Stephen Cavender',
+    siteUrl: 'https://dev.cavender.io',
+    description: 'The personal blog and website of Stephen Cavender',
+    image: './images/icon.jpg',
+    keywords: ['React', 'React Native', 'Node'],
+    githubUrl: 'https://github.com/stephencavender',
+    devUrl: 'https://dev.to/stephencavender',
+    linkedInUrl: 'https://linkedin.com/in/stephencavender',
   },
   plugins: [
     'gatsby-plugin-image',
