@@ -55,7 +55,7 @@ const Index = ({ data }) => {
             ({ id, excerpt, frontmatter, fields: { slug } }) => (
               <li key={id}>
                 <Card
-                  link={slug}
+                  link={`/posts${slug}`}
                   title={frontmatter.title}
                   thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
                   date={frontmatter.date}
@@ -77,7 +77,10 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { project: { ne: true } } }
+    ) {
       nodes {
         fields {
           slug

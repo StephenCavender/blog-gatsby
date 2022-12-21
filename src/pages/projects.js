@@ -3,13 +3,11 @@ import { graphql } from 'gatsby'
 import { SEO } from '../components/seo'
 import Card from '../components/card'
 
-const Posts = ({ data }) => {
+const Projects = ({ data }) => {
   return (
     <>
       <div>
-        <h2 className="mb-6 text-4xl">Posts</h2>
-        {/* posts by year?  */}
-        {/* post tags? */}
+        <h2 className="mb-6 text-4xl">Projects</h2>
         <ul
           className="mb-4"
           style={{
@@ -23,11 +21,10 @@ const Posts = ({ data }) => {
             ({ id, excerpt, frontmatter, fields: { slug } }) => (
               <li key={id}>
                 <Card
-                  link={`/posts${slug}`}
+                  link={`/projects${slug}`}
                   title={frontmatter.title}
                   thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
                   date={frontmatter.date}
-                  dateModified={frontmatter.dateModified}
                   excerpt={excerpt}
                 />
               </li>
@@ -39,16 +36,13 @@ const Posts = ({ data }) => {
   )
 }
 
-export default Posts
+export default Projects
 
 export const Head = () => <SEO />
 
 export const query = graphql`
   query {
-    allMdx(
-      sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { project: { ne: true } } }
-    ) {
+    allMdx(filter: { frontmatter: { project: { eq: true } } }) {
       nodes {
         id
         excerpt(pruneLength: 100)
@@ -57,8 +51,6 @@ export const query = graphql`
         }
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY")
-          dateModified(formatString: "MMMM DD, YYYY")
           featuredImage {
             path {
               childImageSharp {

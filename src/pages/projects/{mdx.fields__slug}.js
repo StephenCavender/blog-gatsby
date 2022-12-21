@@ -17,7 +17,7 @@ const components = {
   },
 }
 
-const Post = ({ data: { mdx }, children }) => {
+const Project = ({ data: { mdx }, children }) => {
   const featuredImg = getImage(
     mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
@@ -54,7 +54,7 @@ export const query = graphql`
   }
 `
 
-export default Post
+export default Project
 
 export const Head = ({ data: { mdx } }) => {
   const featuredImg = getImage(
