@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Logo from '../images/icon.png'
+import Logo from '../images/icon.jpg'
 
 export const Header = () => {
   return (

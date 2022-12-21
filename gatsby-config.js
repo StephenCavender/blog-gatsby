@@ -3,7 +3,7 @@ module.exports = {
     title: 'Stephen Cavender',
     siteUrl: 'https://dev.cavender.io',
     description: 'The personal blog and website of Stephen Cavender',
-    image: './images/icon.jpg',
+    image: './images/icon.png',
     keywords: ['React', 'React Native', 'Node'],
     githubUrl: 'https://github.com/stephencavender',
     devUrl: 'https://dev.to/stephencavender',
