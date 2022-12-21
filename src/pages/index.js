@@ -1,9 +1,11 @@
-import * as React from "react"
+import * as React from 'react'
 import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
-    <Link className="color-black" to="/posts/post-one/">Post one</Link>
+    <Link className="color-black" to="/posts/post-one/">
+      Post one
+    </Link>
   )
 }
 

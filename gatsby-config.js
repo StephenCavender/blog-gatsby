@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `dev.cavender.io`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
     'gatsby-plugin-image',
@@ -14,27 +14,29 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        gatsbyRemarkPlugins: [{
-          resolve: 'gatsby-remark-images',
-          options: {
-            maxWidth: 800,
-          }
-        }]
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: "posts",
-        path: "./content/posts"
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images"
+        name: 'posts',
+        path: './content/posts',
       },
-    }
-  ]
-};
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images',
+      },
+    },
+  ],
+}

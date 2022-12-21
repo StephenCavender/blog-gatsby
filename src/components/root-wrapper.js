@@ -1,5 +1,9 @@
 import React from 'react'
 
 export const RootWrapper = ({ children }) => {
-  return <main className='mx-auto px-2 sm:px-4 prose prose-sm sm:prose'>{children}</main>
+  return (
+    <main className="prose prose-sm mx-auto px-2 sm:prose sm:px-4">
+      {children}
+    </main>
+  )
 }

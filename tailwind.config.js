@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
@@ -17,18 +17,16 @@ module.exports = {
               fontSize: theme('fontSize.xs'),
               padding: theme('spacing.1'),
               '&::before': {
-                content: '"" !important'
+                content: '"" !important',
               },
               '&::after': {
-                content: '"" !important'
-              }
-            }
-          }
-        }
-      })
+                content: '"" !important',
+              },
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }
