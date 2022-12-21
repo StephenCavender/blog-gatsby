@@ -2,8 +2,14 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { SEO } from '../components/seo'
 import Bio from '../images/bio.jpg'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
+import GitHub from '../svg/github.svg'
+import Dev from '../svg/devdotto.svg'
+import LinkedIn from '../svg/linkedin.svg'
 
-const Index = () => {
+const Index = ({ data }) => {
+  const { githubUrl, devUrl, linkedInUrl } = useSiteMetadata()
+
   return (
     <div className="mb-8">
       <img alt="bio" src={Bio} className="float-right w-[180px] rounded-full" />
@@ -16,6 +22,17 @@ const Index = () => {
         I enjoy coding, guitar, crossfit, video games, whiskey, and{' '}
         <Link to="https://strenuouslife.co">doing hard things</Link>.
       </p>
+      <div className="mt-12 flex justify-around">
+        <a href={githubUrl}>
+          <GitHub alt="github link" className="w-12 fill-current " />
+        </a>
+        <a href={devUrl}>
+          <Dev alt="dev to link" className="w-12 fill-current" />
+        </a>
+        <a href={linkedInUrl}>
+          <LinkedIn alt="linked in link" className="w-12 fill-current" />
+        </a>
+      </div>
     </div>
   )
 }
