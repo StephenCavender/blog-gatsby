@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import PrismSyntaxHighlight from '../../components/prism-syntax-highlight'
 import { SEO } from '../../components/seo'
+import { StoreLinks } from '../../components/storeLinks'
 
 const components = {
   code: ({ children, className }) => {
@@ -15,6 +16,7 @@ const components = {
       <code>{children}</code>
     )
   },
+  StoreLinks,
 }
 
 const Project = ({ data: { mdx }, children }) => {
