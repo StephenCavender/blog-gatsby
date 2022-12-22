@@ -2,19 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import PrismSyntaxHighlight from '../../components/prism-syntax-highlight'
-import { SEO } from '../../components/seo'
+import { SEO, CodeBlock } from '../../components'
 
 const components = {
-  code: ({ children, className }) => {
-    return className ? (
-      <PrismSyntaxHighlight className={className}>
-        {children}
-      </PrismSyntaxHighlight>
-    ) : (
-      <code>{children}</code>
-    )
-  },
+  code: CodeBlock,
 }
 
 const Post = ({ data: { mdx }, children }) => {
@@ -41,6 +32,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM Do, YYYY")
+        dateModified(formatString: "MMMM Do, YYYY")
         featuredImage {
           path {
             childImageSharp {

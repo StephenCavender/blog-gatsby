@@ -22,7 +22,8 @@ const Index = ({ data }) => {
         <h2 className="mb-6 text-4xl">Hi</h2>
         <p className="my-2">My name is Steve.</p>
         <p className="my-2">
-          I'm a software engineer at <Link to="https://tele.vet">Televet</Link>.
+          Senior software engineer at <Link to="https://tele.vet">Televet</Link>
+          .
         </p>
         <p className="my-2">
           I enjoy coding, guitar, crossfit, video games, whiskey, and{' '}
@@ -80,6 +81,7 @@ export const query = graphql`
     allMdx(
       sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { project: { ne: true } } }
+      limit: 5
     ) {
       nodes {
         fields {

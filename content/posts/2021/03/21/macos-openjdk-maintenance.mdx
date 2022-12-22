@@ -27,7 +27,7 @@ So the fix was to get into the tap (`brew tap adoptopenjdk/openjdk`) and run the
 
 Now I have two versions of OpenJDK available to my system: 16 and 15. To switch between them I found a little function to pop into my .zshrc file:
 
-```
+```bash
 jdk() {
   export JAVA_VERSION=$1
   java -version
