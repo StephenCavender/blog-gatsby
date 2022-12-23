@@ -54,6 +54,14 @@ module.exports = {
               img: {
                 margin: 0,
               },
+              a: {
+                color: theme('colors.text'),
+                // TODO: remove link underline
+                '&:hover': {
+                  color: theme('colors.hover'),
+                  transition: 'all 0.2s ease',
+                },
+              },
             },
             code: {
               color: theme('colors.pink.400'),
