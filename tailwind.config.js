@@ -7,12 +7,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#1e1e1e',
-        surface: '#5d5d5d',
+        bg: '#282a36',
+        surface: '#383A58',
         line: '#e35113',
-        primary: '#ffb653',
+        primary: '#ffb86c',
         accent: '#338fff',
-        text: '#fff',
+        text: '#f8f8f2',
+        muted: '#bcc2cd',
         hover: '#fe9619',
       },
       typography: (theme) => ({
@@ -45,6 +46,8 @@ module.exports = {
             },
             a: {
               color: theme('colors.primary'),
+              textUnderlineOffset: '5px',
+              textDecorationThickness: '2px',
               '&:hover': {
                 color: theme('colors.hover'),
                 transition: 'all 0.2s ease',
@@ -56,10 +59,15 @@ module.exports = {
               },
               a: {
                 color: theme('colors.text'),
-                // TODO: remove link underline
-                '&:hover': {
-                  color: theme('colors.hover'),
-                  transition: 'all 0.2s ease',
+                textDecoration: 'none',
+              },
+              nav: {
+                a: {
+                  '&:hover': {
+                    borderBottom: '3px solid',
+                    color: theme('colors.hover'),
+                    transition: 'all 0.2s ease',
+                  },
                 },
               },
             },

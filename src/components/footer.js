@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-outline mt-4 border-t py-6 text-center">
+    <footer className="mt-4 bg-surface py-6 text-center shadow-inner">
       © {year} Stephen Cavender
     </footer>
   )
