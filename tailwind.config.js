@@ -11,7 +11,7 @@ module.exports = {
         surface: '#383A58',
         line: '#e35113',
         primary: '#ffb86c',
-        accent: '#338fff',
+        accent: '#f472b6',
         text: '#f8f8f2',
         muted: '#bcc2cd',
         hover: '#fe9619',
@@ -69,6 +69,11 @@ module.exports = {
                     transition: 'all 0.2s ease',
                   },
                 },
+              },
+            },
+            article: {
+              a: {
+                textDecoration: 'none',
               },
             },
             code: {
