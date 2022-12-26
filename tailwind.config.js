@@ -11,7 +11,7 @@ module.exports = {
         surface: '#383A58',
         line: '#e35113',
         primary: '#ffb86c',
-        accent: '#f472b6',
+        accent: '#6cb3ff',
         text: '#f8f8f2',
         muted: '#bcc2cd',
         hover: '#fe9619',
