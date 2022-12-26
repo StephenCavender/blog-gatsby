@@ -24,7 +24,6 @@ const Projects = ({ data }) => {
                   link={`/projects${slug}`}
                   title={frontmatter.title}
                   thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
-                  date={frontmatter.date}
                   excerpt={excerpt}
                 />
               </li>

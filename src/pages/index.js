@@ -59,8 +59,7 @@ const Index = ({ data }) => {
                   link={`/posts${slug}`}
                   title={frontmatter.title}
                   thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
-                  date={frontmatter.date}
-                  dateModified={frontmatter.dateModified}
+                  date={frontmatter.dateModified || frontmatter.date}
                   excerpt={excerpt}
                 />
               </li>
