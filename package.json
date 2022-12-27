@@ -4,11 +4,15 @@
   "private": true,
   "description": "dev.cavender.io",
   "author": "Stephen Cavender",
+  "license": "MIT",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "React",
+    "React Native",
+    "Node"
   ],
+  "homepage": "https://dev.cavender.io",
   "scripts": {
-    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
