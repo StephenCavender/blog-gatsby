@@ -7,12 +7,12 @@ export const StoreLinks = ({ appStoreUrl, googlePlayUrl }) => {
     <div className="flex items-center justify-around">
       {!!appStoreUrl && (
         <a href={appStoreUrl} className="w-[200px]">
-          <AppStore />
+          <AppStore className="hover:opacity-50" />
         </a>
       )}
       {!!googlePlayUrl && (
-        <a href={googlePlayUrl} className="w-[200px]">
-          <img src={GooglePlay} />
+        <a className="w-[200px]" href={googlePlayUrl}>
+          <img className="hover:opacity-50" src={GooglePlay} />
         </a>
       )}
     </div>
