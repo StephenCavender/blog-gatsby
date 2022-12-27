@@ -1,42 +1,34 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, CodeBlock } from '../../components'
-import Calendar from '../../svg/calendar.svg'
+import { SEO, CodeBlock, Hero } from '../../components'
 
 const components = {
   code: CodeBlock,
 }
 
-const Post = ({ data: { mdx }, children }) => {
+const Post = ({
+  data: {
+    mdx: {
+      frontmatter: { featuredImage, modifiedDate, date, title },
+    },
+  },
+  children,
+}) => {
   const featuredImg = getImage(
-    mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
+    featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
-
-  const date = mdx.frontmatter.modifiedDate || mdx.frontmatter.date
 
   return (
     <MDXProvider components={components}>
-      <div
-        className="relative h-[220px] bg-cover bg-center bg-no-repeat p-8"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${featuredImg.images.fallback.src})`,
-        }}
-      >
-        <h1 className="!text-2xl">{mdx.frontmatter.title}</h1>
-        <div className="flex items-center text-sm">
-          <Calendar height="0.875rem" />
-          <time>{date}</time>
-        </div>
-        {/* TOOD: separate caption from link, link entire span here */}
-        <span className="absolute bottom-0 right-0 my-0 mx-auto rounded-tl-lg bg-black py-0.5 px-1 text-xs opacity-50">
-          test
-        </span>
-      </div>
-
-      <GatsbyImage alt="featured image" image={featuredImg} className="w-8" />
-      <p>{mdx.frontmatter.featuredImage?.caption}</p>
+      <Hero
+        image={featuredImg.images.fallback.src}
+        title={title}
+        date={modifiedDate || date}
+        caption={featuredImage.caption}
+        captionUrl={featuredImage.captionUrl}
+      />
       {children}
     </MDXProvider>
   )
@@ -60,6 +52,7 @@ export const query = graphql`
             }
           }
           caption
+          captionUrl
         }
       }
     }
