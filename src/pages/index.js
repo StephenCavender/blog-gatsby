@@ -96,7 +96,6 @@ export const query = graphql`
                 gatsbyImageData(width: 800)
               }
             }
-            caption
           }
         }
       }
