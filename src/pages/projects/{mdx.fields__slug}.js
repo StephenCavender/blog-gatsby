@@ -1,22 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, StoreLinks } from '../../components'
+import { SEO, StoreLinks, Hero } from '../../components'
 
 const components = {
   StoreLinks,
 }
 
-const Project = ({ data: { mdx }, children }) => {
+const Project = ({
+  data: {
+    mdx: {
+      frontmatter: { featuredImage, title },
+    },
+  },
+  children,
+}) => {
   const featuredImg = getImage(
-    mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
+    featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
 
   return (
     <MDXProvider components={components}>
-      <GatsbyImage alt="featured image" image={featuredImg} className="w-8" />
-      <p>{mdx.frontmatter.featuredImage?.caption}</p>
+      <Hero image={featuredImg.images.fallback.src} title={title} />
       {children}
     </MDXProvider>
   )
@@ -30,6 +36,13 @@ export const query = graphql`
       }
       frontmatter {
         title
+        featuredImage {
+          path {
+            childImageSharp {
+              gatsbyImageData(width: 800)
+            }
+          }
+        }
       }
     }
   }
@@ -37,18 +50,26 @@ export const query = graphql`
 
 export default Project
 
-export const Head = ({ data: { mdx } }) => {
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { featuredImage, title, tags },
+      excerpt,
+      fields: { slug },
+    },
+  },
+}) => {
   const featuredImg = getImage(
-    mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
+    featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
 
   return (
     <SEO
-      title={mdx.frontmatter.title}
-      description={mdx.excerpt}
-      pathname={mdx.fields.slug}
+      title={title}
+      description={excerpt}
+      pathname={slug}
       image={featuredImg}
-      tags={mdx.frontmatter.tags}
+      tags={tags}
     />
   )
 }

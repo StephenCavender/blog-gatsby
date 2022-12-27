@@ -61,18 +61,26 @@ export const query = graphql`
 
 export default Post
 
-export const Head = ({ data: { mdx } }) => {
+export const Head = ({
+  data: {
+    mdx: {
+      frontmatter: { featuredImage, title, tags },
+      excerpt,
+      fields: { slug },
+    },
+  },
+}) => {
   const featuredImg = getImage(
-    mdx.frontmatter.featuredImage?.path?.childImageSharp?.gatsbyImageData
+    featuredImage?.path?.childImageSharp?.gatsbyImageData
   )
 
   return (
     <SEO
-      title={mdx.frontmatter.title}
-      description={mdx.excerpt}
-      pathname={mdx.fields.slug}
+      title={title}
+      description={excerpt}
+      pathname={slug}
       image={featuredImg}
-      tags={mdx.frontmatter.tags}
+      tags={tags}
     />
   )
 }
