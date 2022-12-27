@@ -76,6 +76,9 @@ module.exports = {
                 textDecoration: 'none',
               },
             },
+            pre: {
+              background: theme('colors.surface'),
+            },
             code: {
               color: theme('colors.pink.400'),
               backgroundColor: theme('colors.slate.800'),
@@ -89,6 +92,11 @@ module.exports = {
               '&::after': {
                 content: '"" !important',
               },
+            },
+            blockquote: {
+              fontSize: '1rem!important',
+              color: theme('colors.muted'),
+              borderLeftColor: theme('colors.primary'),
             },
           },
         },
