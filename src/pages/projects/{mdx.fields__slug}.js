@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, StoreLinks, Hero } from '../../components'
+import { SEO, StoreLinks } from '../../components'
 
 const components = {
   StoreLinks,
@@ -11,18 +11,16 @@ const components = {
 const Project = ({
   data: {
     mdx: {
-      frontmatter: { featuredImage, title },
+      frontmatter: { header },
     },
   },
   children,
 }) => {
-  const featuredImg = getImage(
-    featuredImage?.path?.childImageSharp?.gatsbyImageData
-  )
+  const headerImg = getImage(header?.childImageSharp?.gatsbyImageData)
 
   return (
     <MDXProvider components={components}>
-      <Hero image={featuredImg.images.fallback.src} title={title} />
+      <GatsbyImage image={headerImg} className="rounded-md" />
       {children}
     </MDXProvider>
   )
@@ -35,12 +33,9 @@ export const query = graphql`
         slug
       }
       frontmatter {
-        title
-        featuredImage {
-          path {
-            childImageSharp {
-              gatsbyImageData(width: 800)
-            }
+        header {
+          childImageSharp {
+            gatsbyImageData(width: 800)
           }
         }
       }
@@ -53,22 +48,20 @@ export default Project
 export const Head = ({
   data: {
     mdx: {
-      frontmatter: { featuredImage, title, tags },
+      frontmatter: { teaser, title, tags },
       excerpt,
       fields: { slug },
     },
   },
 }) => {
-  const featuredImg = getImage(
-    featuredImage?.path?.childImageSharp?.gatsbyImageData
-  )
+  const teaserImg = getImage(teaser?.childImageSharp?.gatsbyImageData)
 
   return (
     <SEO
       title={title}
       description={excerpt}
       pathname={slug}
-      image={featuredImg}
+      image={teaserImg}
       tags={tags}
     />
   )

@@ -20,13 +20,18 @@ const Posts = ({ data }) => {
           }}
         >
           {data.allMdx.nodes.map(
-            ({ id, excerpt, frontmatter, fields: { slug } }) => (
+            ({
+              id,
+              excerpt,
+              frontmatter: { title, featuredImage, dateModified, date },
+              fields: { slug },
+            }) => (
               <li key={id}>
                 <Card
                   link={`/posts${slug}`}
-                  title={frontmatter.title}
-                  thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
-                  date={frontmatter.dateModified || frontmatter.date}
+                  title={title}
+                  thumbnail={featuredImage?.path?.childImageSharp}
+                  date={dateModified || date}
                   excerpt={excerpt}
                 />
               </li>
@@ -64,7 +69,6 @@ export const query = graphql`
                 gatsbyImageData(width: 800)
               }
             }
-            caption
           }
         }
       }

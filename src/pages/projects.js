@@ -18,12 +18,17 @@ const Projects = ({ data }) => {
           }}
         >
           {data.allMdx.nodes.map(
-            ({ id, excerpt, frontmatter, fields: { slug } }) => (
+            ({
+              id,
+              excerpt,
+              frontmatter: { teaser, title },
+              fields: { slug },
+            }) => (
               <li key={id}>
                 <Card
                   link={`/projects${slug}`}
-                  title={frontmatter.title}
-                  thumbnail={frontmatter.featuredImage?.path?.childImageSharp}
+                  title={title}
+                  thumbnail={teaser?.childImageSharp}
                   excerpt={excerpt}
                 />
               </li>
@@ -50,13 +55,10 @@ export const query = graphql`
         }
         frontmatter {
           title
-          featuredImage {
-            path {
-              childImageSharp {
-                gatsbyImageData(width: 800)
-              }
+          teaser {
+            childImageSharp {
+              gatsbyImageData(width: 800)
             }
-            caption
           }
         }
       }

@@ -4,7 +4,7 @@ import Calendar from '../svg/calendar.svg'
 export const Hero = ({ image, title, date, caption, captionUrl }) => {
   return (
     <div
-      className="relative h-[220px] bg-cover bg-center bg-no-repeat p-8"
+      className="relative h-[220px] rounded-md bg-cover bg-center bg-no-repeat p-8"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
       }}
