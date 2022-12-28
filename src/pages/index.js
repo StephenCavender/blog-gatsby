@@ -31,7 +31,7 @@ const Index = ({ data }) => {
         </p>
         <div className="mt-12 flex justify-around">
           <a href={githubUrl}>
-            <GitHub alt="github link" className="w-12 fill-current " />
+            <GitHub alt="github link" className="w-12 fill-current" />
           </a>
           <a href={devUrl}>
             <Dev alt="dev to link" className="w-12 fill-current" />
