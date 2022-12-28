@@ -43,7 +43,7 @@ exports.createPages = async ({
     const {
       id,
       fields: { slug },
-      frontmatter: { type },
+      frontmatter: { type, title },
     } = node
 
     const template = path.resolve(`./src/templates/${type}.js`)
@@ -53,6 +53,7 @@ exports.createPages = async ({
       component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id,
+        slug,
       },
     })
   })
