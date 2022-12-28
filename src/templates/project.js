@@ -32,7 +32,15 @@ export const query = graphql`
       fields {
         slug
       }
+      excerpt
       frontmatter {
+        title
+        tags
+        teaser {
+          childImageSharp {
+            gatsbyImageData(width: 800)
+          }
+        }
         header {
           childImageSharp {
             gatsbyImageData(width: 800)
@@ -54,14 +62,14 @@ export const Head = ({
     },
   },
 }) => {
-  const teaserImg = getImage(teaser?.childImageSharp?.gatsbyImageData)
+  const img = getImage(teaser?.childImageSharp?.gatsbyImageData)
 
   return (
     <SEO
       title={title}
       description={excerpt}
-      pathname={slug}
-      image={teaserImg}
+      pathname={'/projects' + slug}
+      image={img}
       tags={tags}
     />
   )

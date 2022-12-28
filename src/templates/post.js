@@ -70,16 +70,14 @@ export const Head = ({
     },
   },
 }) => {
-  const featuredImg = getImage(
-    featuredImage?.path?.childImageSharp?.gatsbyImageData
-  )
+  const img = getImage(featuredImage?.path?.childImageSharp?.gatsbyImageData)
 
   return (
     <SEO
       title={title}
       description={excerpt}
-      pathname={slug}
-      image={featuredImg}
+      pathname={'/posts' + slug}
+      image={img}
       tags={tags}
     />
   )

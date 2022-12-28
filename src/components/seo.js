@@ -18,6 +18,8 @@ export const SEO = ({ title, description, pathname, image, tags }) => {
     keywords: tags ? tags : keywords,
   }
 
+  console.log('grabbing seo', title)
+
   return (
     <>
       <title>{seo.title}</title>
