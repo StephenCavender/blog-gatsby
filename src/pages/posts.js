@@ -51,7 +51,7 @@ export const query = graphql`
   query {
     allMdx(
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { project: { ne: true } } }
+      filter: { frontmatter: { type: { eq: "post" } } }
     ) {
       nodes {
         id

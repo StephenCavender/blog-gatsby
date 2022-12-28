@@ -98,6 +98,9 @@ module.exports = {
               color: theme('colors.muted'),
               borderLeftColor: theme('colors.primary'),
             },
+            strong: {
+              color: theme('colors.text'),
+            },
           },
         },
       }),

@@ -2,13 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, StoreLinks } from '../../components'
+import { SEO, StoreLinks } from '../components'
 
 const components = {
   StoreLinks,
 }
 
-const Project = ({
+const ProjectTemplate = ({
   data: {
     mdx: {
       frontmatter: { header },
@@ -43,7 +43,7 @@ export const query = graphql`
   }
 `
 
-export default Project
+export default ProjectTemplate
 
 export const Head = ({
   data: {

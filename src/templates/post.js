@@ -2,13 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, CodeBlock, Hero } from '../../components'
+import { SEO, CodeBlock, Hero } from '../components'
 
 const components = {
   code: CodeBlock,
 }
 
-const Post = ({
+const PostTemplate = ({
   data: {
     mdx: {
       frontmatter: { featuredImage, modifiedDate, date, title },
@@ -59,7 +59,7 @@ export const query = graphql`
   }
 `
 
-export default Post
+export default PostTemplate
 
 export const Head = ({
   data: {
