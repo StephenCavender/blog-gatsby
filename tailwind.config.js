@@ -101,6 +101,9 @@ module.exports = {
             strong: {
               color: theme('colors.text'),
             },
+            p: {
+              color: theme('colors.text'),
+            },
           },
         },
       }),
