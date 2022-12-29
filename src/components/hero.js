@@ -18,7 +18,7 @@ export const Hero = ({ image, title, date, caption, captionUrl }) => {
       )}
       {caption && captionUrl && (
         <a className="!text-white" href={captionUrl}>
-          <span className="absolute bottom-0 right-0 my-0 mx-auto rounded-tl-md bg-black py-1 px-1.5 text-xs opacity-50">
+          <span className="absolute bottom-0 right-0 my-0 mx-auto rounded-tl-md bg-black py-1 px-1.5 text-xs opacity-50 hover:opacity-60">
             {caption}
           </span>
         </a>
