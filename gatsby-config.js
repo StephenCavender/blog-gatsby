@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
   siteMetadata: {
     title: 'Stephen Cavender',
@@ -46,6 +48,7 @@ module.exports = {
       options: {
         name: 'posts',
         path: 'content/posts',
+        ignore: isDev ? [] : ['**/drafts'],
       },
     },
     {
