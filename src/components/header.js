@@ -9,7 +9,7 @@ export const Header = () => {
         <div className="mx-6 flex justify-between">
           <Link className="flex gap-1 text-lg" to="/">
             <img alt="logo" src={Logo} className="w-12 object-contain" />
-            <span className="py-5">Stephen Cavender</span>
+            <span className="hidden py-5 sm:block">Stephen Cavender</span>
           </Link>
           <nav className="flex gap-6 py-5">
             <Link
