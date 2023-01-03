@@ -68,7 +68,7 @@ export const Head = ({
     <SEO
       title={title}
       description={excerpt}
-      pathname={'/projects' + slug}
+      pathname={`/projects${slug}`}
       image={img}
       tags={tags}
     />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
 import { SEO, CodeBlock, Hero } from '../components'
@@ -11,7 +11,7 @@ const components = {
 const PostTemplate = ({
   data: {
     mdx: {
-      frontmatter: { featuredImage, modifiedDate, date, title },
+      frontmatter: { featuredImage, modifiedDate, date, title, tags },
     },
   },
   children,
@@ -29,6 +29,11 @@ const PostTemplate = ({
         caption={featuredImage.caption}
         captionUrl={featuredImage.captionUrl}
       />
+      <div className="mt-2 flex items-center justify-center">
+        {tags
+          .map((tag) => <Link to={`/tags/${tag}`}>{tag}</Link>)
+          .reduce((prev, curr) => [prev, <span>,&nbsp;</span>, curr])}
+      </div>
       {children}
     </MDXProvider>
   )
@@ -45,6 +50,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do, YYYY")
         dateModified(formatString: "MMMM Do, YYYY")
+        tags
         featuredImage {
           path {
             childImageSharp {
@@ -76,7 +82,7 @@ export const Head = ({
     <SEO
       title={title}
       description={excerpt}
-      pathname={'/posts' + slug}
+      pathname={`/posts${slug}`}
       image={img}
       tags={tags}
     />
