@@ -32,6 +32,11 @@ exports.createPages = async ({
           }
         }
       }
+      tags: allMdx {
+        group(field: { frontmatter: { tags: SELECT } }) {
+          fieldValue
+        }
+      }
     }
   `)
 
@@ -39,11 +44,12 @@ exports.createPages = async ({
     reporter.panicOnBuild('Error loading MDX result', result.errors)
   }
 
+  // Posts and Projects
   result.data.allMdx.nodes.forEach((node) => {
     const {
       id,
       fields: { slug },
-      frontmatter: { type, title },
+      frontmatter: { type },
     } = node
 
     const template = path.resolve(`./src/templates/${type}.js`)
@@ -54,6 +60,19 @@ exports.createPages = async ({
       context: {
         id,
         slug,
+      },
+    })
+  })
+
+  // Tags
+  result.data.tags.group.forEach((group) => {
+    const template = path.resolve('./src/templates/tag.js')
+
+    createPage({
+      path: path.join('tags', group.fieldValue),
+      component: template,
+      context: {
+        tag: group.fieldValue,
       },
     })
   })
