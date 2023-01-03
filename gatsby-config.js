@@ -65,5 +65,57 @@ module.exports = {
         path: 'src/images',
       },
     },
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) =>
+              allMdx.edges.map((edge) =>
+                Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.body }],
+                })
+              ),
+            query: `
+              {
+                allMdx(
+                  sort: { frontmatter: { date: DESC } }
+                  filter: { frontmatter: { type: { eq: "post" } } }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      body
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/feed.xml',
+            title: "Steve's Blog RSS Feed",
+          },
+        ],
+      },
+    },
   ],
 }
