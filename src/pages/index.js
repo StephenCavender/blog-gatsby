@@ -7,6 +7,7 @@ import GitHub from '../svg/github.svg'
 import Dev from '../svg/devdotto.svg'
 import LinkedIn from '../svg/linkedin.svg'
 import Card from '../components/card'
+import Mail from '../svg/mail.svg'
 
 const Index = ({ data }) => {
   const { githubUrl, devUrl, linkedInUrl } = useSiteMetadata()
@@ -29,15 +30,21 @@ const Index = ({ data }) => {
           I enjoy coding, guitar, crossfit, video games, whiskey, and{' '}
           <Link to="https://strenuouslife.co">doing hard things</Link>.
         </p>
-        <div className="mt-12 flex justify-around">
+        <div className="mt-12 flex h-12 justify-around">
           <a href={githubUrl}>
-            <GitHub alt="github link" className="w-12 fill-current" />
+            <GitHub alt="github link" className="h-full w-full fill-current" />
           </a>
           <a href={devUrl}>
-            <Dev alt="dev to link" className="w-12 fill-current" />
+            <Dev alt="dev to link" className="h-full w-full fill-current" />
           </a>
           <a href={linkedInUrl}>
-            <LinkedIn alt="linked in link" className="w-12 fill-current" />
+            <LinkedIn
+              alt="linked in link"
+              className="h-full w-full fill-current"
+            />
+          </a>
+          <a href="mailto:dev@cavender.io">
+            <Mail alt="email link" className="h-full w-full stroke-current" />
           </a>
         </div>
       </div>
