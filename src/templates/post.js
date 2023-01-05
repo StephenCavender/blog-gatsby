@@ -23,7 +23,7 @@ const PostTemplate = ({
   return (
     <MDXProvider components={components}>
       <Hero
-        image={featuredImg.images.fallback.src}
+        image={featuredImg?.images?.fallback?.src}
         title={title}
         date={modifiedDate || date}
         caption={featuredImage.caption}
