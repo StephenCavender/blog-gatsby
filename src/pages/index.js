@@ -31,19 +31,19 @@ const Index = ({ data }) => {
           <Link to="https://strenuouslife.co">doing hard things</Link>.
         </p>
         <div className="mt-12 flex h-12 justify-around">
-          <a href={githubUrl}>
+          <a className="flex-1" href={githubUrl}>
             <GitHub alt="github link" className="h-full w-full fill-current" />
           </a>
-          <a href={devUrl}>
+          <a className="flex-1" href={devUrl}>
             <Dev alt="dev to link" className="h-full w-full fill-current" />
           </a>
-          <a href={linkedInUrl}>
+          <a className="flex-1" href={linkedInUrl}>
             <LinkedIn
               alt="linked in link"
               className="h-full w-full fill-current"
             />
           </a>
-          <a href="mailto:dev@cavender.io">
+          <a className="flex-1" href="mailto:dev@cavender.io">
             <Mail alt="email link" className="h-full w-full stroke-current" />
           </a>
         </div>
