@@ -26,8 +26,7 @@ const PostTemplate = ({
         image={featuredImg?.images?.fallback?.src}
         title={title}
         date={modifiedDate || date}
-        caption={featuredImage.caption}
-        captionUrl={featuredImage.captionUrl}
+        creator={featuredImage.creator}
       />
       <div className="mt-2 flex items-center justify-center">
         {tags
@@ -57,8 +56,10 @@ export const query = graphql`
               gatsbyImageData(width: 800)
             }
           }
-          caption
-          captionUrl
+          creator {
+            name
+            url
+          }
         }
       }
     }
