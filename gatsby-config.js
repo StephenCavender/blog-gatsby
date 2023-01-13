@@ -8,8 +8,8 @@ module.exports = {
     image: './images/icon.png',
     keywords: ['React', 'React Native', 'Node'],
     githubUrl: 'https://github.com/stephencavender',
-    devUrl: 'https://dev.to/stephencavender',
     linkedInUrl: 'https://linkedin.com/in/stephencavender',
+    biolinkUrl: 'https://bio.cavender.io',
   },
   plugins: [
     {
