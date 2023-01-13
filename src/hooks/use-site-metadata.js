@@ -12,8 +12,8 @@ export const useSiteMetadata = () => {
             image
             keywords
             githubUrl
-            devUrl
             linkedInUrl
+            biolinkUrl
           }
         }
       }
