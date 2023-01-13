@@ -4,13 +4,13 @@ import { SEO } from '../components/seo'
 import Bio from '../images/bio.jpg'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import GitHub from '../svg/github.svg'
-import Dev from '../svg/devdotto.svg'
+import Biolink from '../svg/biolink.svg'
 import LinkedIn from '../svg/linkedin.svg'
 import Card from '../components/card'
 import Mail from '../svg/mail.svg'
 
 const Index = ({ data }) => {
-  const { githubUrl, devUrl, linkedInUrl } = useSiteMetadata()
+  const { githubUrl, linkedInUrl, biolinkUrl } = useSiteMetadata()
 
   return (
     <>
@@ -32,19 +32,28 @@ const Index = ({ data }) => {
         </p>
         <div className="mt-12 flex h-12 justify-around">
           <a className="flex-1" href={githubUrl}>
-            <GitHub alt="github link" className="h-full w-full fill-current" />
-          </a>
-          <a className="flex-1" href={devUrl}>
-            <Dev alt="dev to link" className="h-full w-full fill-current" />
+            <GitHub
+              alt="github link"
+              className="h-full w-full stroke-current stroke-1"
+            />
           </a>
           <a className="flex-1" href={linkedInUrl}>
             <LinkedIn
               alt="linked in link"
-              className="h-full w-full fill-current"
+              className="h-full w-full stroke-current stroke-1"
+            />
+          </a>
+          <a className="flex-1" href={biolinkUrl}>
+            <Biolink
+              alt="biolink link"
+              className="h-full w-full stroke-current"
             />
           </a>
           <a className="flex-1" href="mailto:dev@cavender.io">
-            <Mail alt="email link" className="h-full w-full stroke-current" />
+            <Mail
+              alt="email link"
+              className="h-full w-full stroke-current stroke-1"
+            />
           </a>
         </div>
       </div>
