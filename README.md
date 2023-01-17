@@ -1,4 +1,4 @@
-[![Gatsby Publish](https://github.com/StephenCavender/gatsby-blog/actions/workflows/main.yml/badge.svg)](https://github.com/StephenCavender/gatsby-blog/actions/workflows/main.yml)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/StephenCavender/gatsby-blog/gatsby.yml)
 
 # Stephen Cavender
 
