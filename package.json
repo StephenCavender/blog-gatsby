@@ -7,9 +7,14 @@
   "license": "MIT",
   "keywords": [
     "gatsby",
-    "React",
-    "React Native",
-    "Node"
+    "react",
+    "react native",
+    "node",
+    "blog",
+    "markdown",
+    "mdx",
+    "technical writing",
+    "tailwind"
   ],
   "homepage": "https://dev.cavender.io",
   "scripts": {
