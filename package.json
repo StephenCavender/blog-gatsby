@@ -1,8 +1,8 @@
 {
-  "name": "dev.cavender.io",
+  "name": "gatsby-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "dev.cavender.io",
+  "description": "Personal blog and website",
   "author": "Stephen Cavender",
   "license": "MIT",
   "keywords": [
