@@ -1,7 +1,7 @@
 import React from 'react'
 import Calendar from '../svg/calendar.svg'
 
-export const Hero = ({ image, title, date, caption, captionUrl }) => {
+export const Hero = ({ image, title, date, creator }) => {
   return (
     <div
       className="relative h-[220px] rounded-md bg-cover bg-center bg-no-repeat p-8"
@@ -16,10 +16,10 @@ export const Hero = ({ image, title, date, caption, captionUrl }) => {
           <time>{date}</time>
         </div>
       )}
-      {caption && captionUrl && (
-        <a className="!text-white" href={captionUrl}>
+      {creator && (
+        <a className="!text-white" href={creator.url}>
           <span className="absolute bottom-0 right-0 my-0 mx-auto rounded-tl-md bg-black py-1 px-1.5 text-xs opacity-50 hover:opacity-60">
-            {caption}
+            Image by {creator.name}
           </span>
         </a>
       )}
