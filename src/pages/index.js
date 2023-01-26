@@ -32,28 +32,22 @@ const Index = ({ data }) => {
         </p>
         <div className="mt-12 flex h-12 justify-around">
           <a className="flex-1" href={githubUrl}>
-            <GitHub
-              alt="github link"
-              className="h-full w-full stroke-current stroke-1"
-            />
+            <GitHub alt="github link" className="h-full w-full fill-current" />
           </a>
           <a className="flex-1" href={linkedInUrl}>
             <LinkedIn
               alt="linked in link"
-              className="h-full w-full stroke-current stroke-1"
+              className="h-full w-full fill-current"
             />
           </a>
           <a className="flex-1" href={biolinkUrl}>
             <Biolink
               alt="biolink link"
-              className="h-full w-full stroke-current"
+              className="h-full w-full fill-current"
             />
           </a>
           <a className="flex-1" href="mailto:dev@cavender.io">
-            <Mail
-              alt="email link"
-              className="h-full w-full stroke-current stroke-1"
-            />
+            <Mail alt="email link" className="h-full w-full" />
           </a>
         </div>
       </div>
