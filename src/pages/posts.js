@@ -31,7 +31,7 @@ const Posts = ({ data }) => {
                   link={`/posts${slug}`}
                   title={title}
                   thumbnail={featuredImage?.path?.childImageSharp}
-                  date={dateModified || date}
+                  date={date}
                   excerpt={excerpt}
                 />
               </li>
