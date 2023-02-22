@@ -46,7 +46,10 @@ export const Head = () => <SEO />
 
 export const query = graphql`
   query {
-    allMdx(filter: { frontmatter: { type: { eq: "project" } } }) {
+    allMdx(
+      filter: { frontmatter: { type: { eq: "project" } } }
+      sort: { frontmatter: { displayOrder: DESC } }
+    ) {
       nodes {
         id
         excerpt(pruneLength: 100)
