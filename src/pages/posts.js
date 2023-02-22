@@ -8,8 +8,6 @@ const Posts = ({ data }) => {
     <>
       <div>
         <h2 className="mb-6 text-4xl">Posts</h2>
-        {/* posts by year?  */}
-        {/* post tags? */}
         <ul
           className="mb-4"
           style={{
