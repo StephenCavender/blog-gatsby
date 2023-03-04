@@ -23,9 +23,24 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.webp',
+        name: 'Stephen Cavender',
+        short_name: 'Stephen Cavender',
+        start_url: '/',
+        background_color: '#282a36',
+        theme_color: '#ffb86c',
+        display: 'standalone',
+        icon: 'src/images/icon.png',
+        icons: [
+          {
+            src: 'src/images/icon.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
       },
     },
+    'gatsby-plugin-offline',
     'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
