@@ -23,7 +23,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint . --ext md,mdx",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "draft": "scripts/draft.sh",
+    "publish": "scripts/publish.sh"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
