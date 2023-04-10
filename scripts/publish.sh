@@ -14,9 +14,6 @@ if [ -d $POSTS/drafts/$1 ]
     # Make folder structure
     mkdir -p $POSTS/$TODAY
 
-    # Delete hemingway file(s)
-    rm -rf $POSTS/drafts/$1/*.hemingway
-
     # Move given post into 'today' folder
     mv $POSTS/drafts/$1 $POSTS/$TODAY
   else
