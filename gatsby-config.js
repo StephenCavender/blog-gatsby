@@ -63,7 +63,7 @@ module.exports = {
       options: {
         name: 'posts',
         path: 'content/posts',
-        ignore: isDev ? [] : ['**/drafts'],
+        ignore: isDev ? [] : ['**/_drafts'],
       },
     },
     {
