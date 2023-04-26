@@ -1,0 +1,38 @@
+[
+  {
+    "fromPath": "/posts/2016/06/18/dotnet-selenium-mstest-quickstart",
+    "toPath": "/posts/dev/dotnet-selenium-mstest-quickstart"
+  },
+  {
+    "fromPath": "/posts/2016/06/25/selenium-overview-setup",
+    "toPath": "/posts/dev/selenium-overview-setup"
+  },
+  {
+    "fromPath": "/posts/2016/07/20/js-selenium-mocha-quickstart",
+    "toPath": "/posts/dev/js-selenium-mocha-quickstart"
+  },
+  {
+    "fromPath": "/posts/2019/11/08/linux-dual-boot",
+    "toPath": "/posts/dev/linux-dual-boot"
+  },
+  {
+    "fromPath": "/posts/2020/11/16/my-dev-setup",
+    "toPath": "/posts/dev/my-dev-setup"
+  },
+  {
+    "fromPath": "/posts/2021/03/21/macos-openjdk-maintenance",
+    "toPath": "/posts/dev/macos-openjdk-maintenance"
+  },
+  {
+    "fromPath": "/posts/2021/04/10/react-native-svg",
+    "toPath": "/posts/dev/react-native-svg"
+  },
+  {
+    "fromPath": "/posts/2023/01/21/level-up-git-usage",
+    "toPath": "/posts/dev/level-up-git-usage"
+  },
+  {
+    "fromPath": "/posts/2023/04/24/react-native-env",
+    "toPath": "/posts/dev/react-native-env"
+  }
+]

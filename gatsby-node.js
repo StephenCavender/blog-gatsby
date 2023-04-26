@@ -1,5 +1,6 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const redirects = require('./redirects.json')
 
 exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
   if (node.internal.type === 'Mdx') {
@@ -13,9 +14,16 @@ exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 
 exports.createPages = async ({
   graphql,
-  actions: { createPage },
+  actions: { createPage, createRedirect },
   reporter,
 }) => {
+  redirects.forEach(({ fromPath, toPath }) =>
+    createRedirect({
+      fromPath,
+      toPath,
+    })
+  )
+
   const result = await graphql(`
     query {
       allMdx {
