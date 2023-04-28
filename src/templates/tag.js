@@ -8,12 +8,12 @@ const TagTemplate = ({ pageContext, data }) => {
   return (
     <>
       <h2 className="mb-6 text-4xl font-bold">Tag: {pageContext.tag}</h2>
-      <ul className="list-disc columns-2">
+      <ul className="columns-2 space-y-3">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={slug} className="my-2">
+            <li key={slug}>
               <Link to={`/posts${slug}`}>{title}</Link>
             </li>
           )

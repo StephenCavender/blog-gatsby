@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import { SEO } from '../components/seo'
+import { graphql } from 'gatsby'
+import { SEO, Link } from '../components'
 
 const compare = (a, b) => b.totalCount - a.totalCount
 
@@ -9,18 +9,16 @@ const Tags = ({ data }) => {
 
   return (
     <>
-      <h1>Tags</h1>
-      <div className="">
-        <ul className="columns-3">
-          {groups.map((group) => (
-            <li key={group.tag}>
-              <Link className="text-xl" to={group.tag}>
-                {group.tag} ({group.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h2 className="mb-6 text-4xl font-bold">Tags</h2>
+      <ul className="columns-3 space-y-2">
+        {groups.map((group) => (
+          <li key={group.tag}>
+            <Link className="text-xl" to={group.tag}>
+              {group.tag} ({group.totalCount})
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
