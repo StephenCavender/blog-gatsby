@@ -10,7 +10,7 @@ const Tags = ({ data }) => {
   return (
     <>
       <h2 className="mb-6 text-4xl font-bold">Tags</h2>
-      <ul className="columns-3 space-y-2">
+      <ul className="list-disc columns-3 space-y-2">
         {groups.map((group) => (
           <li key={group.tag}>
             <Link className="text-xl" to={group.tag}>
