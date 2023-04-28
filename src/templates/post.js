@@ -28,13 +28,11 @@ const PostTemplate = ({
         date={modifiedDate || date}
         creator={featuredImage.creator}
       />
-      <div className="my-2" />
-      <div className="flex items-center justify-center">
+      <div className="my-2 flex items-center justify-center">
         {tags
           .map((tag) => <Link to={`/tags/${tag}`}>{tag}</Link>)
           .reduce((prev, curr) => [prev, <span>,&nbsp;</span>, curr])}
       </div>
-      <div className="my-2" />
       <div className="prose prose-sm sm:prose">{children}</div>
     </MDXProvider>
   )

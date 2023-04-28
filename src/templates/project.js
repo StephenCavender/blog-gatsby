@@ -20,8 +20,7 @@ const ProjectTemplate = ({
 
   return (
     <MDXProvider components={components}>
-      <GatsbyImage image={headerImg} className="rounded-md" />
-      <div className="my-6" />
+      <GatsbyImage image={headerImg} className="mb-6 rounded-md" />
       <div className="prose prose-sm sm:prose">{children}</div>
     </MDXProvider>
   )

@@ -8,7 +8,7 @@ const TagTemplate = ({ pageContext, data }) => {
   return (
     <>
       <h2 className="mb-6 text-4xl font-bold">Tag: {pageContext.tag}</h2>
-      <ul className="list-disc columns-2 space-y-3">
+      <ul className="list-disc space-y-3">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
@@ -19,7 +19,7 @@ const TagTemplate = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      <Link className="float-right" to="/tags">
+      <Link className="float-right mt-5" to="/tags">
         More Tags...
       </Link>
     </>
