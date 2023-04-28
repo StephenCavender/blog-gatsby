@@ -1,8 +1,8 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image'
 import { MDXProvider } from '@mdx-js/react'
-import { SEO, CodeBlock, Hero } from '../components'
+import { SEO, CodeBlock, Hero, Link } from '../components'
 
 const components = {
   code: CodeBlock,
@@ -28,12 +28,14 @@ const PostTemplate = ({
         date={modifiedDate || date}
         creator={featuredImage.creator}
       />
-      <div className="mt-2 flex items-center justify-center">
+      <div className="my-2" />
+      <div className=" flex items-center justify-center">
         {tags
           .map((tag) => <Link to={`/tags/${tag}`}>{tag}</Link>)
           .reduce((prev, curr) => [prev, <span>,&nbsp;</span>, curr])}
       </div>
-      {children}
+      <div className="my-2" />
+      <div className="prose prose-sm sm:prose">{children}</div>
     </MDXProvider>
   )
 }

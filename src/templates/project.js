@@ -21,7 +21,8 @@ const ProjectTemplate = ({
   return (
     <MDXProvider components={components}>
       <GatsbyImage image={headerImg} className="rounded-md" />
-      {children}
+      <div className="my-6" />
+      <div className="prose prose-sm sm:prose">{children}</div>
     </MDXProvider>
   )
 }
