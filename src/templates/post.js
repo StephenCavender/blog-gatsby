@@ -29,7 +29,7 @@ const PostTemplate = ({
         creator={featuredImage.creator}
       />
       <div className="my-2" />
-      <div className=" flex items-center justify-center">
+      <div className="flex items-center justify-center">
         {tags
           .map((tag) => <Link to={`/tags/${tag}`}>{tag}</Link>)
           .reduce((prev, curr) => [prev, <span>,&nbsp;</span>, curr])}

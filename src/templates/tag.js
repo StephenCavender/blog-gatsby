@@ -1,19 +1,19 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import { SEO } from '../components'
+import { graphql } from 'gatsby'
+import { SEO, Link } from '../components'
 
 const TagTemplate = ({ pageContext, data }) => {
   const { edges } = data.allMdx
 
   return (
     <>
-      <h1>Tag: {pageContext.tag}</h1>
-      <ul className="columns-2">
+      <h2 className="mb-6 text-4xl font-bold">Tag: {pageContext.tag}</h2>
+      <ul className="list-disc columns-2">
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={slug}>
+            <li key={slug} className="my-2">
               <Link to={`/posts${slug}`}>{title}</Link>
             </li>
           )
