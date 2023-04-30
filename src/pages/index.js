@@ -34,11 +34,12 @@ const Index = ({ data }) => {
         />
         <h2 className="mb-6 text-4xl">Hi</h2>
         <p className="my-2">My name is Steve.</p>
+        <p className="my-2">Christian, Husband, Father</p>
         <p className="my-2">
-          Senior software engineer at <A href="https://tele.vet">TeleVet</A>.
+          Software engineer at <A href="https://tele.vet">TeleVet</A>.
         </p>
         <p className="my-2">
-          I enjoy coding, guitar, crossfit, video games, whiskey, and{' '}
+          I enjoy coding, music, fitness, video games, whiskey, and{' '}
           <A href="https://strenuouslife.co">doing hard things</A>.
         </p>
         <div className="mt-12 flex h-12 justify-around">
