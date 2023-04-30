@@ -21,6 +21,8 @@ exports.createPages = async ({
     createRedirect({
       fromPath,
       toPath,
+      isPermanent: true,
+      redirectInBrowser: true,
     })
   )
 
