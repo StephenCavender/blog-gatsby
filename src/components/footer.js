@@ -8,12 +8,16 @@ export const Footer = () => {
   const { biolinkUrl } = useSiteMetadata()
 
   return (
-    <footer className="mt-4 flex items-center justify-center gap-2 bg-surface py-6 shadow-inner">
-      <div>© {year}</div>
-      <A href={biolinkUrl} className="!no-underline">
-        Stephen Cavender
-      </A>
-      <Ichthys alt="ichthys" className="w-8" />
+    <footer className="bg-surface py-3 text-sm shadow-inner">
+      <div className="flex items-center justify-center gap-2">
+        <div>© {year}</div>
+        <A href={biolinkUrl} className="!no-underline">
+          Stephen Cavender
+        </A>
+        <Ichthys alt="ichthys" className="w-8" />
+      </div>
+      {/* Made in USA */}
+      <div className="flex justify-center">Made In USA</div>
     </footer>
   )
 }
