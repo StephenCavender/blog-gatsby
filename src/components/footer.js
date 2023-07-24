@@ -17,7 +17,7 @@ export const Footer = () => {
         <Ichthys alt="ichthys" className="w-8" />
       </div>
       {/* Made in USA */}
-      <div className="flex justify-center">Made In USA</div>
+      <div className="flex justify-center">Made in the USA</div>
     </footer>
   )
 }
