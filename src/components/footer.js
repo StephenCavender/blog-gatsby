@@ -1,6 +1,5 @@
 import React from 'react'
 import Ichthys from '../svg/ichthys.svg'
-import UsFlag from '../svg/us-flag.svg'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import { A } from './link'
 
@@ -17,10 +16,7 @@ export const Footer = () => {
         </A>
         <Ichthys alt="ichthys" className="w-8" />
       </div>
-      <div className="flex items-center justify-center gap-2">
-        <UsFlag alt="Made in the USA" className="w-8" />
-        Made in the USA
-      </div>
+      <div className="flex justify-center">Made in the USA</div>
     </footer>
   )
 }
