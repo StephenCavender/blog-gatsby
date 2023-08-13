@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="flex items-center justify-center gap-2">
         <div>© {year}</div>
           Stephen Cavender
-        <Ichthys alt="ichthys" className="w-8" />
+        <Ichthys alt="ichthys" className="w-6" />
       </div>
       <div className="flex justify-center">Made in the USA</div>
     </footer>
