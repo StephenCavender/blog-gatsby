@@ -13,7 +13,6 @@ export const useSiteMetadata = () => {
             keywords
             githubUrl
             linkedInUrl
-            biolinkUrl
           }
         }
       }

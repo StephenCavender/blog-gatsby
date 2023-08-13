@@ -9,7 +9,6 @@ module.exports = {
     keywords: ['React', 'React Native', 'Node'],
     githubUrl: 'https://github.com/stephencavender',
     linkedInUrl: 'https://linkedin.com/in/stephencavender',
-    biolinkUrl: 'https://bio.cavender.io',
   },
   plugins: [
     {

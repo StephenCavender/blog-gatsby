@@ -4,7 +4,6 @@ import { SEO } from '../components/seo'
 import Bio from '../images/bio.jpg'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 import GitHub from '../svg/github.svg'
-import Biolink from '../svg/biolink.svg'
 import LinkedIn from '../svg/linkedin.svg'
 import Card from '../components/card'
 import Mail from '../svg/mail.svg'
@@ -22,7 +21,7 @@ const ConnectLink = ({ href, children }) => {
 }
 
 const Index = ({ data }) => {
-  const { githubUrl, linkedInUrl, biolinkUrl } = useSiteMetadata()
+  const { githubUrl, linkedInUrl } = useSiteMetadata()
 
   return (
     <>
@@ -49,12 +48,6 @@ const Index = ({ data }) => {
           <ConnectLink href={linkedInUrl}>
             <LinkedIn
               alt="linked in link"
-              className="h-full w-full fill-current"
-            />
-          </ConnectLink>
-          <ConnectLink href={biolinkUrl}>
-            <Biolink
-              alt="biolink link"
               className="h-full w-full fill-current"
             />
           </ConnectLink>
