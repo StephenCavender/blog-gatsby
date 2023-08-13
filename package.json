@@ -48,6 +48,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.30.0",
+    "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-mdx": "^2.0.5",
     "gatsby-plugin-postcss": "^6.3.0",
     "postcss": "^8.4.20",
