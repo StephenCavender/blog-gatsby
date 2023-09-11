@@ -35,7 +35,7 @@ const Index = ({ data }) => {
         <p className="my-2">My name is Steve.</p>
         <p className="my-2">Christian, Husband, Father</p>
         <p className="my-2">
-          Software engineer at <A href="https://tele.vet">TeleVet</A>.
+          Software engineer at <A href="https://otto.vet">Otto</A>.
         </p>
         <p className="my-2">
           I enjoy coding, music, fitness, video games, whiskey, and{' '}
